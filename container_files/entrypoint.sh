@@ -64,7 +64,7 @@ _term() {
 
 trap _term SIGTERM
 
-(su openvpn && sleep 10 && openvpn3 session-start --dco ${ENABLE_DCO:-false} --config ${VPN_CONFIG:-/config.ovpn} &)
+(su openvpn && sleep 10 && /usr/local/libexec/openvpn3-linux/openvpn3-autoload --directory ${VPN_CONFIG:-/.openvpn3/autoload} &)
 /usr/bin/dbus-daemon --nofork --nopidfile --system &
 
 wait
