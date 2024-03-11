@@ -19,7 +19,7 @@ RUN apk add --no-cache autoconf \
                        py3-jinja2 \
                        tinyxml2-dev
 
-RUN git clone --depth 1 --single-branch https://github.com/xX-VGER-Xx/openvpn3_linux_docker.git
+RUN git clone --depth 1 --single-branch https://github.com/OpenVPN/openvpn3-linux.git
 RUN cd openvpn3-linux &&  \
     ./bootstrap.sh && \
     ./configure --enable-dco \
